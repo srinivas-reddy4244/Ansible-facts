@@ -1,0 +1,8 @@
+- hosts: all
+  vars_files:
+          - "{{ ansible_facts['distribution'] }}"
+  tasks:
+  - name: "installing packages in respected os's"
+    package:
+            name: "{{ package }}"
+            state: present
